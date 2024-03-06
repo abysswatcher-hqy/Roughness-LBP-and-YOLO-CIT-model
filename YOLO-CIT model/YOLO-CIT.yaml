@@ -1,0 +1,37 @@
+# YOLO-CIT Model Configuration
+
+# Model parameters
+nc: 2  # Number of classes
+depth_multiple: 0.33  # Model depth multiple
+width_multiple: 0.50  # Model width multiple
+
+# Backbone configuration
+backbone:
+  # Replace the original backbone with C3 model embedded by CBAM
+  pretrained: /path/to/c3_cbam_weights.pth
+  # Other backbone parameters if applicable
+
+# Neck configuration
+neck:
+  # Use Ghostconv in the neck network
+  ghostconv: True
+  # Other neck parameters if applicable
+
+# Head configuration
+head:
+  # YOLOv5s head configuration
+  anchors:
+    - 10,13,  16,30,  33,23
+    - 30,61,  62,45,  59,119
+    - 116,90,  156,198,  373,326
+  # Other head parameters if applicable
+
+# Training parameters
+train:
+  # Specify your training dataset and other training parameters
+
+# Inference parameters
+infer:
+  # Specify your inference settings and parameters
+
+# Other general configurations if needed
